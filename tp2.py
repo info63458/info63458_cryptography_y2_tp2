@@ -13,7 +13,7 @@ def GCD(a, b): #Returns the GCD of a and b (Euclidean algorithm).
     return abs(a) #return absolute value of a
 #taken from the TP pdf
 
-print(GCD(84,126)) #test works
+# print(GCD(84,126)) #test works
 
 def RSA_encryption(p,q,m):
     # STOP USING INPUT GODDAMNIT
@@ -21,6 +21,11 @@ def RSA_encryption(p,q,m):
         print("The numbers are prime")
         n=p*q
         phi=(p-1)*(q-1)
+        e=int(input("Please choose an exponent"))
+        if GCD(e,phi) == 1 :
+            print("That number works!") #successful
+        else : 
+            print("Please choose a different exponent")
     else : 
         print("Please choose prime numbers")
     return #returns None but it isn't printed, unnecessary as it doesn't return a value
