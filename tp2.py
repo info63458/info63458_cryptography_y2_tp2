@@ -14,6 +14,12 @@ def GCD(a, b): #Returns the GCD of a and b (Euclidean algorithm).
 #taken from the TP pdf
 
 # print(GCD(84,126)) #test works
+# (n,e) is the public key, d is decryption and is the modular inverse of e modulo phi(n)
+# so (d*e) % phi(n) == 1 (find d)
+
+def modular_inverse(e,phi):
+    original_phi_value=phi #if d is negative we need to make it positive
+
 
 def RSA_encryption(p,q,m):
     # STOP USING INPUT GODDAMNIT
@@ -24,6 +30,7 @@ def RSA_encryption(p,q,m):
         e=int(input("Please choose an exponent"))
         if GCD(e,phi) == 1 :
             print("That number works!") #successful
+            (e * d) % phi(n) == 1  # should be True
         else : 
             print("Please choose a different exponent")
     else : 
